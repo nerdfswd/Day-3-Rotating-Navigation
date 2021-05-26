@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css?family=Muli&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Muli", sans-serif;
+  overflow-x: hidden;
+  background-color: #000000;
+  color: #222;
+  margin: 0;
+}
+.container {
+  width: 100vw;
+  min-height: 100vh;
+  padding: 60px;
+  background-color: #fafafa;
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+.container.show-nav {
+  transform: rotate(-20deg);
+}
+.circle-container {
+  top: -100px;
+  left: -100px;
+  position: fixed;
+}
+.circle {
+  background-color: rgba(235, 70, 11, 0.918);
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+.circle button {
+  color: white;
+  top: 50%;
+  left: 50%;
+  background: transparent;
+  position: absolute;
+  border: 0;
+  font-size: 29px;
+  height: 100px;
+  cursor: pointer;
+}
+.circle button:focus {
+  outline: none;
+}
+.circle button#open {
+  left: 60%;
+}
+.circle button#close {
+  top: 60%;
+  transform: rotate(90deg);
+  transform-origin: top left;
+}
+.container.show-nav + nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+nav {
+  position: fixed;
+  bottom: 50px;
+  left: 0%;
+  z-index: 100;
+}
+nav ul {
+  list-style-type: none;
+  padding-left: 20px;
+}
+nav ul li {
+  text-transform: uppercase;
+  color: white;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+nav ul li + li {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+nav ul li + li + li {
+  margin-left: 35px;
+  transform: translateX(-200%);
+}
+nav ul li i {
+  font-size: 18px;
+  margin-right: 10px;
+}
+
+.content img {
+  max-width: 100%;
+  max-height: 100%;
+}
+.content {
+  max-width: 1000px;
+  margin: 50px auto;
+}
+.content p {
+  line-height: 1.5;
+  color: #333;
+  text-align: justify;
+  text-justify: auto;
+}
+.content small {
+  color: grey;
+  font-style: italic;
+}
+.content h1 {
+  margin: 0;
+}
+@media (max-width: 480px) {
+  .content h1 {
+    font-size: 28px;
+  }
+  .content p {
+    text-align: justify;
+    text-justify: auto;
+  }
+}
